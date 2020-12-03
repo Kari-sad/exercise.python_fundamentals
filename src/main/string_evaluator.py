@@ -6,11 +6,19 @@ class StringManipulator(object):
     def concatenate(self, value_to_be_added_to, value_to_add):
             return str(value_to_be_added_to) + str(value_to_add)
 
-    def substring_inclusive(self, string_to_fetch_from, starting_index, ending_index):
-        return string_to_fetch_from[int(starting_index), int(ending_index)]
+    def substring_inclusive(self , string_to_fetch_from, starting_index, ending_index):
+        string_to_fetch_from = str(string_to_fetch_from)
+        start = int(starting_index)
+        end = int(ending_index) + 1
+        s = string_to_fetch_from[start:end]
+        return s
 
     def substring_exclusive(self, string_to_fetch_from, starting_index, ending_index):
-        return slice(string_to_fetch_from,int(starting_index) + 1, int(ending_index))
+        string_to_fetch_from = str(string_to_fetch_from)
+        start = int(starting_index)+1
+        end = int(ending_index)
+        s = string_to_fetch_from[start:end]
+        return s
 
     def compare(self, first_value, second_value):
         if str(first_value) in ("None", "False"):
